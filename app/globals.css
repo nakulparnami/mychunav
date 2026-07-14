@@ -7,3 +7,20 @@ body {
   padding: 0;
   margin: 0;
 }
+
+/* Fakes a row of punched holes along the top edge of a card, like a
+   torn ballot or ticket stub. The circles are "cut out" using the
+   page's background color, so this only looks right on the --paper bg. */
+.ballot-perforation::before {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-image: radial-gradient(
+    circle at 10px 0,
+    #f7f4ec 5px,
+    transparent 5.5px
+  );
+  background-size: 20px 10px;
+  background-repeat: repeat-x;
+}
